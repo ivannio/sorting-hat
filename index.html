@@ -12,9 +12,8 @@
 </head>
 
 <body>
-    <h1>Sorting Hat</h1>
     <div class="container">
-        <div class="jumbotron">
+        <div class="jumbotron" id="jumbotron">
             <h1 class="display-4">Welcome to Hog Dog University</h1>
             <p class="lead">Thestral dirigible plums, Viktor Krum hexed memory charm Animagus Invisibility Cloak
                 three-headed Dog. Half-Blood Prince Invisibility Cloak cauldron cakes, hiya Harry! Basilisk venom
@@ -26,19 +25,9 @@
                 Sorcerer's Stone biting teacup. Side-along dragon-scale suits Filch 20 points, Mr. Potter.</p>
             <hr class="my-4">
             <p>You put in your name and you will be randomly assigned to a house</p>
-            <a class="btn btn-primary btn-lg" href="#" role="button">Let's start sorting!</a>
+            <a class="btn btn-primary btn-lg" href="#" role="button" id="startSorting">Let's start sorting!</a>
         </div>
-        <div class="container card">
-            <form>
-                <div class="form-group">
-                    <h2>Enter First Year's Name</h2>
-                    <label for="studentName">Student:</label>
-                    <input type="text" class="form-control" id="studentNameInput" placeholder="Henry Putter">
-                </div>
-                <button type="submit" class="btn btn-primary">Sort</button>
-            
-            </form>
-        </div>
+        <div id="form-zone"></div>
     </div>
     <script src="main.js"></script>
 </body>
