@@ -1,7 +1,7 @@
 console.log("main.js is linked");
 
 const printToDOM = (stringToPrint, divID) => {
-  document.getElementById(divID).innerHTML = stringToPrint;
+  document.getElementById(divID).innerHTML += stringToPrint;
 };
 
 const houses = ["Snakeboys", "Bird", "Griffindoor", "Hooflepoof"];
@@ -15,24 +15,43 @@ const printForm = () => {
                     <label for="studentName">Student:</label>
                     <input type="text" class="form-control" id="studentNameInput" placeholder="Henry Putter">
                 </div>
-                <button type="submit" class="btn btn-primary">Sort</button>            
+                <button type="submit" id="sort" class="btn btn-primary">Sort</button>            
             </form>
         </div>`;
-    printToDOM(htmlString, "form-zone");
-    document.getElementById("jumbotron").className = "d-none";
+  printToDOM(htmlString, "form-zone");
+  document.getElementById("jumbotron").className = "d-none";
+  document.getElementById("sort").addEventListener("click", () => {
+    cardPrinter();
+  });
 };
 
-document.getElementById('startSorting').addEventListener('click', () => {
-    printForm();
-})
+document.getElementById("startSorting").addEventListener("click", () => {
+  printForm();
+});
 
-// const cardPrinter = () => {
+const cardPrinter = () => {
+  const htmlString = `
+    <div class="col-4">
+        <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">${document.getElementById('studentNameInput').value}</h5>
+                    <p class="card-text">${
+                      houses[Math.floor(Math.random() * 4)]
+                    }</p>
+                    <a href="#" class="btn btn-primary">expel</a>
+                </div>
+        </div>
+    </div>
+    `;
+  printToDOM(htmlString, "card-zone");
+  document.getElementById('studentNameInput').value = '';
+};
+// cardPrinter();
+// cardPrinter();
+// cardPrinter();
+// cardPrinter();
 
+document.getElementById("sort").addEventListener("click", () => {
+  cardPrinter();
+});
 
-// }
-
-
-
-
-
-// Math.floor(Math.random() * 4);
