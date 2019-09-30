@@ -50,9 +50,8 @@ const cardPrinter = () => {
   
 };
 
+const expel = () = {
+  // Get back to this later
+}
 
-
-// printedStudents[ ].addEventListener("click", () => {
-//   document.getElementById("jumbotron").className = "d-none";
-// });
 
