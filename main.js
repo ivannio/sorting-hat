@@ -40,18 +40,22 @@ const cardPrinter = () => {
                     <p class="card-text">${
                       houses[Math.floor(Math.random() * 4)]
                     }</p>
-                    <a href="#" class="btn btn-primary" id="${document.getElementById('studentNameInput').value}-expel">expel</a>
+                    <a href="#" class="btn btn-primary expel" id="${document.getElementById('studentNameInput').value}-expel">expel</a>
                 </div>
         </div>
       `;
   htmlString += `</div>`;
   printToDOM(htmlString, "card-zone");  
   document.getElementById('studentNameInput').value = '';
-  
+  expelButtonListeners();
 };
 
-const expel = () = {
-  // Get back to this later
+const expelButtonListeners = () => {
+  const expelButtons = document.getElementsByClassName('expel');
+  for (let i = 0; expelButtons.length; i += 1) {
+    expelButtons[i].addEventListener('click', (e) => {
+      const parentCard = document.getElementById(e.target.id).parentNode.parentNode;
+      parentCard.remove();
+    })
+  }
 }
-
-
